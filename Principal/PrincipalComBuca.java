@@ -1,6 +1,9 @@
 package screenmatch.Principal;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import screenmatch.modelosGerais.Titulo;
+import screenmatch.modelosGerais.importOMDB;
 
 import java.io.IOException;
 import java.net.URI;
@@ -30,10 +33,17 @@ public class PrincipalComBuca {
         String retornoJson = response.body();
 
 
-        //Criando um objeto da classe Gson para manipular o Json
-        Gson transformaObjeto = new Gson();
+        //Criando um objeto da classe GsonBuilder para manipular o Json e definir a política de escrita dos atributos
+        Gson transformaObjeto = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
 
-        Titulo retornaJson = transformaObjeto.fromJson(retornoJson, Titulo.class);
+        importOMDB retornaJson = transformaObjeto.fromJson(retornoJson, importOMDB.class);
         System.out.println(retornaJson);
+
+        Titulo recebeOmdb = new Titulo(retornaJson);
+        System.out.println("TITULO CONVERTIDO");
+        System.out.println(recebeOmdb);
+
+
     }
  }

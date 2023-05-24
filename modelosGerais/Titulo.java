@@ -6,13 +6,22 @@ public class Titulo implements Comparable<Titulo> {
     private String      nome;
     @SerializedName("Year")
     private int         anoDeCriacao;
-    private double      duracao;
+    private int      duracao;
     private double      avaliacao;
 
 
     public Titulo(String nome, int anoDeCriacao) {
         this.nome = nome;
         this.anoDeCriacao = anoDeCriacao;
+    }
+
+    //Construtor que inicia um tipo Titulo com um OMDB já definido
+    public Titulo(importOMDB tituloImportado) {
+        this.nome = tituloImportado.title();
+        this.anoDeCriacao = Integer.valueOf(tituloImportado.year());
+        this.duracao = Integer.valueOf(tituloImportado.runtime().substring(0,3));
+        /* Integer.valueof utilizado para "transformar" uma String em um tipo int e então alocar
+        em sua repectiva varíavel na classe Título. Já substring foi utilizado para retornar posições específicas*/
     }
 
     //ATRIBUTOS DA CLASSE FILME
@@ -74,8 +83,10 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "nome='" + nome + '\'' +
+        return "Titulo{" +
+                "nome='" + nome + '\'' +
                 ", anoDeCriacao=" + anoDeCriacao +
+                ", duracao=" + duracao +
                 '}';
     }
 }
