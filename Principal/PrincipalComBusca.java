@@ -16,13 +16,15 @@ import java.util.Scanner;
 
 public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
+
         Scanner leDados = new Scanner(System.in);
+        //GUARDANDO O NOME DO FILME A SER PESQUISADO
         System.out.println("Qual filme deseja buscar ? ");
         var pegaDados = leDados.nextLine();
-
+        //CRIANDO A URL DE PESQUISA
         var endereco = "https://www.omdbapi.com/?t=" + pegaDados + "&apikey=7fec4bef";
 
-
+        //UTILIZANDO A URL CRIADA PARA CRIAR UMA REQUEST E CONSULTAR A API
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
