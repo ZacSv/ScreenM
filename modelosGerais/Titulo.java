@@ -18,7 +18,7 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(importOMDB tituloImportado) {
         this.nome = tituloImportado.title();
         this.anoDeCriacao = Integer.valueOf(tituloImportado.year());
-        this.duracao = Integer.valueOf(tituloImportado.runtime().substring(0,3));
+        this.duracao = Integer.valueOf(tituloImportado.runtime().substring(0, 2));
         /* Integer.valueof utilizado para "transformar" uma String em um tipo int e então alocar
         em sua repectiva varíavel na classe Título. Já substring foi utilizado para retornar posições específicas*/
     }

@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import screenmatch.modelosGerais.Titulo;
 import screenmatch.modelosGerais.importOMDB;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -22,7 +21,7 @@ public class PrincipalComBusca {
         System.out.println("Qual filme deseja buscar ? ");
         var pegaDados = leDados.nextLine();
         //CRIANDO A URL DE PESQUISA
-        var endereco = "https://www.omdbapi.com/?t=" + pegaDados + "&apikey=7fec4bef";
+        var endereco = "https://www.omdbapi.com/?t=" + pegaDados.replace(" ", "+") + "&apikey=7fec4bef";
 
         //UTILIZANDO A URL CRIADA PARA CRIAR UMA REQUEST E CONSULTAR A API
         HttpClient client = HttpClient.newHttpClient();
