@@ -1,5 +1,6 @@
 package screenmatch.classesDeCalculo;
 
+//CLASSE QUE RETORNA UMA RECOMENDAÇÃO COM BASE NA CLASSIFICAÇÃO DO TÍTULO
 public class FiltroRecomendacao {
 
     public void filtra(Classificavel classificavel){

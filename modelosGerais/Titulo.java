@@ -1,10 +1,9 @@
 package screenmatch.modelosGerais;
-import com.google.gson.annotations.SerializedName;
+
+//SUPERCLASSE DE SÉRIE E FILME
 
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
     private String      nome;
-    @SerializedName("Year")
     private int         anoDeCriacao;
     private int      duracao;
     private double      avaliacao;
@@ -67,7 +66,6 @@ public class Titulo implements Comparable<Titulo> {
         this.nome = nome;
     }
 
-    //Declarando e retornando o ano de criação do filme
     public int getAnoDeCriacao(){
         return anoDeCriacao;
     }

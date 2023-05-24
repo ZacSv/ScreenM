@@ -1,5 +1,7 @@
 package screenmatch.modelosGerais;
 
+//CLASSE CRIADA PARA PERSONALIZAÇÃO DOS FILMES
+
 import screenmatch.classesDeCalculo.Classificavel;
 
 public class Filme extends Titulo implements Classificavel {
@@ -18,5 +20,4 @@ public class Filme extends Titulo implements Classificavel {
         return "Filme: " + this.getNome() + " " + this.getAnoDeCriacao();
     }
 
-    //Contrutor que permite a escrita do nome do filme diretamente na criação do objeto.
 }

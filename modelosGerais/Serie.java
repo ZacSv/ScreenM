@@ -2,6 +2,8 @@ package screenmatch.modelosGerais;
 
 import screenmatch.classesDeCalculo.Classificavel;
 
+//CLASSE CRIADA PARA PERSONALIZAÇÃO DAS SÉRIES
+
 public class Serie extends Titulo implements Classificavel {
 
     //ATRIBUTOS ESPECÍFICOS DA SUBCLASSE SÉRIE

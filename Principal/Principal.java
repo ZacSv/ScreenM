@@ -11,6 +11,9 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 
+//CLASSE PARA TESTAR AS FUNCIONALIDADES E ATRIBUIÇÕES
+
+
 public class Principal {
     public static void main(String[] args) {
         Filme primeiroFilme = new Filme("Cães de Guerra", 2017);
@@ -21,7 +24,7 @@ public class Principal {
         Serie segundaSerie = new Serie("La Casa de Papel", 2018);
         Serie terceiraSerie = new Serie("Breaking Bad", 2016);
 
-        List<Titulo> listaDeAssistidos = new LinkedList<>();
+        List<Titulo> listaDeAssistidos = new ArrayList<>();
         listaDeAssistidos.add(primeiroFilme);
         listaDeAssistidos.add(outroFilme);
         listaDeAssistidos.add(terceiroFilme);
