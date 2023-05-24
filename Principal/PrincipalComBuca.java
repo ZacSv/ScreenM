@@ -1,4 +1,7 @@
 package screenmatch.Principal;
+import com.google.gson.Gson;
+import screenmatch.modelosGerais.Titulo;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -22,6 +25,15 @@ public class PrincipalComBuca {
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+
+        //Guardando o retorno da pesquisa na variavel "retornoJson"
+        String retornoJson = response.body();
+
+
+        //Criando um objeto da classe Gson para manipular o Json
+        Gson transformaObjeto = new Gson();
+
+        Titulo retornaJson = transformaObjeto.fromJson(retornoJson, Titulo.class);
+        System.out.println(retornaJson);
     }
  }

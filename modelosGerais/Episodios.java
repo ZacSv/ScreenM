@@ -7,8 +7,6 @@ public class Episodios {
     private String nome;
     private Serie serie;
 
-
-
     //GETTERS E SETTERS
     public int getNumero() {
         return numero;

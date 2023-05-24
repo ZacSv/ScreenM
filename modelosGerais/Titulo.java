@@ -1,7 +1,10 @@
 package screenmatch.modelosGerais;
+import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String      nome;
+    @SerializedName("Year")
     private int         anoDeCriacao;
     private double      duracao;
     private double      avaliacao;
@@ -67,5 +70,12 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeCriacao=" + anoDeCriacao +
+                '}';
     }
 }
